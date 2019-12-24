@@ -25,6 +25,7 @@ Router::Router()
 
 void Router::tablecreate(Graph& G,char ch)
 {
+	cout << "何治霖" << endl;
 	tablesize = 0;
 	int v = G.getVPos(ch);
 	for (int i = 0; i < G.getnumV(); i++)//依次键表
