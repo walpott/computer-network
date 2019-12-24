@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool Router::Dijkstra(Graph& G, char ch)
+bool Router::Dijkstra(Graph& G, int ch)
 {
 	int v0 = G.getVPos(ch);
 	if (v0 == -1)
@@ -25,7 +25,7 @@ bool Router::Dijkstra(Graph& G, char ch)
 
 	for (int i = 0; i < maxV - 1; i++)
 	{
-		min = 9999;
+		min = 999;
 		for (int j = 0; j < maxV; j++)
 		{
 			if (s[j] == 0 && min > dist[j])
@@ -34,12 +34,13 @@ bool Router::Dijkstra(Graph& G, char ch)
 				n = j;
 			}
 		}
-		if (min == 9999) return false;
+		if (min == 999)
+			continue;
 
 		s[n] = 1;
 		for (int k = 0; k < maxV; k++)
 		{
-			if (s[k] == 0 && G.getcost(n, k) != 9999 && dist[k] > dist[n] + G.getcost(n, k))
+			if (s[k] == 0 && G.getcost(n, k) != 999 && dist[k] > dist[n] + G.getcost(n, k))
 			{
 				dist[k] = dist[n] + G.getcost(n, k);
 				path[k] = n;

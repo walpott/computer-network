@@ -30,6 +30,7 @@ void Graph::outEdge()//输出邻接矩阵
 		cout << "" << endl;
 	}
 }
+
 void Graph::outV()//输出顶点数组
 {
 	for (int i = 0; i < numV; i++)
@@ -46,7 +47,7 @@ int Graph::getcost(int m, int n)//两点间的权值
 	return Edge[m][n];
 }
 
-int Graph::getVPos(char vertex)//给出顶点vertex在图中的位置
+int Graph::getVPos(int vertex)//给出顶点vertex在图中的位置
 {
 	for (int i = 0; i < numV; i++)
 		if (Vdge[i].router == vertex) return i;
@@ -75,7 +76,7 @@ void Graph::createbyfile()
 	i = 0;
 	do
 	{
-		char p, q;
+		int p, q;
 		fin2 >> p >> q;	
 		int a = getVPos(p); 
 		int b = getVPos(q);

@@ -4,7 +4,7 @@
 #include <iostream>
 
 const int maxsize = 20;
-const int maxValue = 9999;
+const int maxValue = 999;
 
 using namespace std;
 
@@ -59,8 +59,11 @@ void Router::show(int v)
 	cout << "地址\t\t下一跳" << endl;
 	for (int i = 0; i < c; i++)
 	{
+		if (dist[i] != 999)
+		{
 			cout << table[i].address[0] << ".0.0.0" << "\t\t";
 			cout << table[i].next[0] << ".0.0.0" << endl;
+		}
 	}
 	cout<<"默认\t\t"<<table[v].address[0]<< ".0.0.0" << endl;
 }

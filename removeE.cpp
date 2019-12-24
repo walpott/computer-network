@@ -5,7 +5,7 @@
 void Graph::removeE()//删除两个点间的边
 {
 	cout << "依此输入边的两个顶点：";
-	char v11, v22;
+	int v11, v22;
 	cin >> v11 >> v22;
 	int v1, v2;
 	v1 = getVPos(v11);

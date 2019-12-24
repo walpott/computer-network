@@ -6,8 +6,8 @@ void Graph::InsertE()//插入边
 {
 	cout << "添加边：请依次输入顶点1 顶点2  权值：";
 	int temp;
-	char temprouter1;
-	char temprouter2;
+	int temprouter1;
+	int temprouter2;
 	cin >> temprouter1;
 	cin >> temprouter2;
 	cin >> temp;

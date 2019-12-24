@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 	int check;
-	char ch;
+	int ch;
 	Graph G;
 	Router R;
 	cout << "欢迎来到路由表生成程序！" << endl;
@@ -51,7 +51,7 @@ int main()
 	next:
 	cout << "请给出一个路由器的名字，系统将根据该名字生成一个路由表：" << endl;
 	cin >> ch;
-	char c = ch;
+	int c = ch;
 	if (!R.Dijkstra(G, ch))
 	{
 		cout << "没有查到该路由器！" << endl;

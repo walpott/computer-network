@@ -5,7 +5,7 @@
 char Graph::removeV()//在图中删去顶点v以及所有与它相关联的边
 {
 	cout << "输入顶点删除";
-	char temp;
+	int temp;
 	cin >> temp;
 	int v = getVPos(temp);
 
@@ -21,10 +21,18 @@ char Graph::removeV()//在图中删去顶点v以及所有与它相关联的边
 			if (Edge[i][v] > 0 && Edge[i][v] < 999)
 				numE--;
 		for (i = 0; i < numV; i++) //用最后一列填补第v列
+		{
 			Edge[i][v] = Edge[i][numV - 1];
+			
+			Edge[i][numV - 1] = 999;
+		}
 
 		for (j = 0; j < numV; j++) //用最后一行填补第v行
+		{
 			Edge[v][j] = Edge[numV - 1][j];
+			
+			Edge[numV - 1][j] = 999;
+		}
 		numV--; //顶点数减1
 		cout << "----------成功删除点----------" << endl;
 	}

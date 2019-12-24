@@ -22,7 +22,7 @@ class Router
 {
 public:
 	Router();
-	bool Dijkstra(Graph& G, char ch);
+	bool Dijkstra(Graph& G, int ch);
 	void tablecreate(Graph& G, char ch);
 	void show(int v);
 private:

@@ -5,7 +5,7 @@ using namespace std;
 
 struct V//点结构
 {
-	char router;//路由器名
+	int router;//路由器名
 	int ip[4];//ip地址，10进制表示
 };
 
@@ -26,7 +26,7 @@ public:
 	char removeV();//删除点
 	void createbyfile();//文件输入
 
-	int getVPos(char vertex); //给出顶点vertex在图中的位置
+	int getVPos(int vertex); //给出顶点vertex在图中的位置
 	void getrouter(int v,int*table);//返回路由表ip地址到数组table中
 	int getnumV();//返回节点数
 	int getcost(int m, int n);//返回边值
