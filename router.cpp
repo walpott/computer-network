@@ -45,6 +45,11 @@ void Router::tablecreate(Graph& G,char ch)
 					u = path[u];//变为上一跳
 			}
 		}
+		else
+		{
+			table[v].address[0] = G.Vdge[v].ip[0];
+			table[v].next[0] = G.Vdge[v].ip[0];
+		}
 	}
 }
 
@@ -54,16 +59,8 @@ void Router::show(int v)
 	cout << "地址\t\t下一跳" << endl;
 	for (int i = 0; i < c; i++)
 	{
-		if (i != v)
-		{
 			cout << table[i].address[0] << ".0.0.0" << "\t\t";
 			cout << table[i].next[0] << ".0.0.0" << endl;
-		}
-		if (i == v)
-		{
-			cout<<v+1 << ".0.0.0" << "\t\t";
-			cout << v+1 << ".0.0.0" << endl;
-		}
 	}
-	cout<<"默认\t\t"<<v+1<< ".0.0.0" << endl;
+	cout<<"默认\t\t"<<table[v].address[0]<< ".0.0.0" << endl;
 }
