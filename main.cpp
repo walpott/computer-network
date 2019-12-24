@@ -70,12 +70,12 @@ int main()
 		{
 			cout << "输入路由器：" << endl;
 			cin >> c;
-			if (!R.Dijkstra(G, ch))
+			if (!R.Dijkstra(G, c))
 			{
 				cout << "没有查到该路由器！" << endl;
 				system("pause");
 				system("cls");
-				continue;
+				goto next;
 			}
 			R.tablecreate(G, c);
 			cout << "更改成功！(按任意键退出)" << endl;
